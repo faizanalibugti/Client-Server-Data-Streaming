@@ -10,7 +10,7 @@
 
 4. Open **3** Anaconda Prompts and in each one change directory to the downloaded repository using cd
 
-5. In the first Anaconda Prompt run **python -m http.server** to initiate FTP server. Allow access to bypass firewall [](https://i.stack.imgur.com/VLdf5.png)
+5. In the first Anaconda Prompt run **python -m http.server** to initiate FTP server. Allow access to bypass firewall <img src="https://i.stack.imgur.com/VLdf5.png" width="500">
 
 6. In the second Anaconda Prompt run **python steer_server.py** which will load tensorflow model and write steering angle to disk as an npy file
 
