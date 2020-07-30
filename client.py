@@ -12,12 +12,19 @@ i = 0
 while True:
     last_time = time.time()
     url = "http://192.168.1.100:8000/steer.npy"
-    r = requests.get(url)
+    r = requests.get(url, allow_redirects=True)
+
+    with open("steer.npy","wb") as npy: 
+        for chunk in r.iter_content(chunk_size=1024): 
+            # writing one chunk at a time to pdf file 
+            if chunk: 
+                npy.write(chunk) 
     
     try:
         degrees = np.load('./steer.npy', allow_pickle=True)
         print(degrees)
     except:
+        #degrees = np.load('./steer.npy', allow_pickle=True)
         print(degrees)
 
     print("Delay: {}".format((time.time() - last_time)))
